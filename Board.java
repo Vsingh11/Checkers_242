@@ -23,5 +23,31 @@ public class Board {
 		}
 	}
 
+	public void printBoard() {
+
+		System.out.println("  1 2 3 4");
+		System.out.println(" +-+-+-+-+");
+		
+		for(int x=0;x<length;x++) {
+			 if(counter==0) {
+				  System.out.print("A|");
+			  }else if(counter==1) {
+				  System.out.print("B|");
+			  }else if(counter==2) {
+				  System.out.print("C|");
+			  }else if(counter==3) {
+				  System.out.print("D|");
+			  }
+					
+			
+		for(int y=0;y<length;y++) {
+		 System.out.print(gameBoard[x][y].squareContent);
+		 System.out.print("|");
+			}
+		System.out.println(" ");
+			System.out.println(" +-+-+-+-+");
+			counter = counter + 1;
+		}
+	
 	
 }
