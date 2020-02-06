@@ -2,7 +2,10 @@
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Board board=new Board(4);
+		board.initializeBoard();
+		board.printBoard();
+		board.playGame();
 
 	}
 

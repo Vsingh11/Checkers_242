@@ -1,7 +1,9 @@
 
 public class Board {
 	private int length;
+	int counter=0;
 	Node[][] gameBoard;
+	String playerMove;
 	public Board(int length) {
 		this.length=length;
 	}
@@ -11,7 +13,7 @@ public class Board {
 		boolean isWhite=true;
 		for(int x=0;x<length;x++) {
 			for(int y=0;y<length;y++) {
-				gameBoard[x][y]=new Node("");
+				gameBoard[x][y]=new Node(" ");
 			}
 		}
 		if(length==4) {
@@ -19,10 +21,19 @@ public class Board {
 			gameBoard[0][3].setSquareContent("b");
 			gameBoard[3][0].setSquareContent("w");
 			gameBoard[3][2].setSquareContent("w");
-			
+//			gameBoard[2][1].setSquareContent("wk");
+//			gameBoard[1][2].setSquareContent("b");
+//			
+		}
+		playerMove="w";
+		
+	}
+	public void playGame() {
+		if(length==4) {
+			Moves moves=new Moves(10,gameBoard);
+			moves.startGame();
 		}
 	}
-
 	public void printBoard() {
 
 		System.out.println("  1 2 3 4");
@@ -48,6 +59,7 @@ public class Board {
 			System.out.println(" +-+-+-+-+");
 			counter = counter + 1;
 		}
+
 	
-	
+}
 }
