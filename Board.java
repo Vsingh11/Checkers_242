@@ -1,9 +1,12 @@
+import java.util.LinkedList;
 
 public class Board {
 	private int length;
 	int counter=0;
 	Node[][] gameBoard;
 	String playerMove;
+	Board prev;
+	LinkedList<Board> children=new LinkedList<Board>();
 	public Board(int length) {
 		this.length=length;
 	}
@@ -52,14 +55,27 @@ public class Board {
 					
 			
 		for(int y=0;y<length;y++) {
-		 System.out.print(gameBoard[x][y].squareContent);
+		 System.out.print(this.gameBoard[x][y].squareContent);
 		 System.out.print("|");
 			}
 		System.out.println(" ");
 			System.out.println(" +-+-+-+-+");
 			counter = counter + 1;
 		}
-
+counter=0;
 	
 }
+	public boolean areEqual(Node[][] board) {
+		for(int x=0;x<4;x++) {
+			for(int y=0;y<4;y++) {
+				if(this.gameBoard[x][y].squareContent.equals(board[x][y].squareContent)) {
+					
+				}else {
+					return false;
+				}
+			}
+			
+		}
+		return true;
+	}
 }
